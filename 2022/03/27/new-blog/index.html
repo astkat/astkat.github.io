@@ -175,7 +175,7 @@
 <p><code>npm install</code></p>
 <p>启动：</p>
 <p><code>hexo server</code></p>
-<p>接下来就是Hexo部署到gitee，这里就很多帖子了，但是现在新版的gitee开启pages还需要手持身份证拍照。</p>
+<p><del>接下来就是Hexo部署到gitee，这里就很多帖子了，但是现在新版的gitee开启pages还需要手持身份证拍照</del>。(最后选择了github)</p>
 <p>hexo的主题和设置都需要直接在文本页操作，路径是在themes内主题下的_config.yml和layout</p>
 <p>最后是上传到Github，Github创建仓库后在Hexo的config.yml下添加：</p>
 <p><code>deploy:</code></p>
@@ -188,7 +188,16 @@
 <p><code>hexo clean</code></p>
 <p><code>hexo g</code></p>
 <p><code>hexo d</code></p>
-<p>最后一部操作时会提示输入github账号密码，由于新版本添加了令牌也只能每次都复制粘贴，输入后正常上传即可。</p>
+<p>最后一部操作时会提示输入github账号密码，由于新版本添加了令牌需要复制粘贴，输入后正常上传即可，后续可以添加ssh key，终端内任意目录生成密钥：</p>
+<p><code>ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</code></p>
+<p>在.ssh文件夹内复制.pub后缀下文本到github settings&#x2F;SSH keys，然后本地测试：</p>
+<p><code>ssh git@github.com</code></p>
+<p>成功后会在文本内显示Hi 你的用户名</p>
+<p>hexo发布新文章的指令为</p>
+<p><code>hexo n xxx</code></p>
+<p>其他指令</p>
+<p><code>hexo g = hexo generate #生成</code><br><code>hexo s = hexo server #启动服务预览</code><br><code>hexo d = hexo deploy #部署</code></p>
+<p><code>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器</code><br><code>hexo server -s #静态模式</code><br><code>hexo server -p 5000 #更改端口</code><br><code>hexo server -i 192.168.1.1 #自定义 IP</code><br><code>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</code></p>
 
         </div>
 
