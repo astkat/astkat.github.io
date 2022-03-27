@@ -13,7 +13,7 @@
 
 
 
-<title>极月廿九 - 之行</title>
+<title>博客迁移到了HEXO - 之行</title>
 
 
 
@@ -131,7 +131,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">极月廿九</h1>
+            <h1 class="post-title">博客迁移到了HEXO</h1>
             
                 <div class="post-meta">
                     
@@ -140,23 +140,43 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">January 21, 2020&nbsp;&nbsp;1:14:00</a>
+                        Date: <a href="#">March 27, 2022&nbsp;&nbsp;9:35:36</a>
                         </span>
                     
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/%E7%89%87%E5%88%BB/">片刻</a>
-                            
-                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>和你一同时 恰像十五岁的中学生<br>这些年来我好像没什么长进<br>你也还可以让我看到彼时的你</p>
+            <p>用了七年的域名<a href="">ieza.cn</a>今年开始没有再续费了，一来是因为博客的更新越来越少，很多文字性的东西已经很难再沉下心去写，二来也是开始尝试用视频记载一些生活中的片段，发布平台也都是在B站之类的视频网站。但是从14年做博客到现在，从折腾各种主题到自己拼凑了一款模板并且还有不少人留言索要，也总归是从14岁高一到如今快22研一的留念地和一些记忆的载体。</p>
+<p>没有过多记述的，来把自己从typecho转Hexo的过程写下来分享下吧，网络上有一些插件形式的东西实际上过于复杂了。</p>
+<p>这里只需要借助两个工具：</p>
+<p>一个是typecho转wordpress的插件：<a target="_blank" rel="noopener" href="https://github.com/sunxiyuan/ByeTyp">https://github.com/sunxiyuan/ByeTyp</a></p>
+<p>二是wordpress转hexo的插件：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/migration">https://hexo.io/zh-cn/docs/migration</a></p>
+<p>这样应该算是最简单的转换方式。</p>
+<p>接下来就是Hexo在本地的安装和基于gitee的托管，由于我是mac m1系统，相比于网络上大量的windows环境下的安装步骤还是有所不同的，因此也贴下面。</p>
+<p>首先安装nodejs以及git，不需要通过Homebrew之类的工具，mac直接安装是最便捷的。</p>
+<p>nodejs: <a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<p>Git: <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/git-osx-installer/">https://sourceforge.net/projects/git-osx-installer/</a></p>
+<p>Nodejs安装好后检查版本：</p>
+<p><code>node -v</code></p>
+<p><code>npm -v</code></p>
+<p>mac初次安装git会提示安装一个工具，等待即可，完成后检查。</p>
+<p>接着安装hexo：</p>
+<p><code>npm install -g hexo-cli</code></p>
+<p>但这里mac m1基本会提示权限错误，再次：</p>
+<p><code>sudo npm install -g hexo-cli</code></p>
+<p>安装后执行（创建目录）：</p>
+<p><code>hexo init blog</code></p>
+<p>cd到目录：</p>
+<p><code>cd blog</code></p>
+<p>安装：</p>
+<p><code>npm install</code></p>
+<p>启动：</p>
+<p><code>hexo server</code></p>
+<p>接下来就是Hexo部署到gitee，这里就很多帖子了，但是现在新版的gitee开启pages还需要手持身份证拍照。</p>
+<p>hexo的主题和设置都需要直接在文本页操作，路径是在themes内主题下的_config.yml和layout</p>
 
         </div>
 
@@ -171,7 +191,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2020/01/21/343/">http://example.com/2020/01/21/343/</a></span>
+                        <span><a href="http://example.com/2022/03/27/new-blog/">http://example.com/2022/03/27/new-blog/</a></span>
                     </p>
                 
                 
@@ -190,7 +210,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E7%89%87%E5%88%BB/"># 片刻</a>
+                        <a href="/tags/%E7%A2%8E%E7%89%87/"># 碎片</a>
                     
                         
                 </span>
@@ -203,10 +223,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/01/25/346/">写给自己 记梦</a>
             
-            
-            <a class="next" rel="next" href="/2020/01/15/325/">银河系梦游指南</a>
+            <a class="next" rel="next" href="/2022/03/26/hello-world/">Hello Hexo</a>
             
         </section>
 
