@@ -177,6 +177,18 @@
 <p><code>hexo server</code></p>
 <p>接下来就是Hexo部署到gitee，这里就很多帖子了，但是现在新版的gitee开启pages还需要手持身份证拍照。</p>
 <p>hexo的主题和设置都需要直接在文本页操作，路径是在themes内主题下的_config.yml和layout</p>
+<p>最后是上传到Github，Github创建仓库后在Hexo的config.yml下添加：</p>
+<p><code>deploy:</code></p>
+<p>  <code>type: git</code></p>
+<p>  <code>repo: https://github.com/xxx/xxx.github.io.git</code></p>
+<p>  <code>branch: main</code></p>
+<p>需要注意的是github目前默认的branch是main。</p>
+<p>接着在github的设置里添加令牌：Settings&#x2F;Developer settings&#x2F;Personal access tokens 勾选所有设置</p>
+<p>回到终端，cd到hexo目录。</p>
+<p><code>hexo clean</code></p>
+<p><code>hexo g</code></p>
+<p><code>hexo d</code></p>
+<p>最后一部操作时会提示输入github账号密码，由于新版本添加了令牌也只能每次都复制粘贴，输入后正常上传即可。</p>
 
         </div>
 
