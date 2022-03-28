@@ -55,24 +55,6 @@
 <meta name="generator" content="Hexo 6.1.0"></head>
 
 <body>
-    <script>
-        // this function is used to check current theme before page loaded.
-        (() => {
-            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
-            const isDark = currentTheme === 'dark';
-            const pagebody = document.getElementsByTagName('body')[0]
-            if (isDark) {
-                pagebody.classList.add('dark-theme');
-                // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
-            } else {
-                pagebody.classList.remove('dark-theme');
-                // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Light"
-            }
-        })();
-    </script>
-
     <div class="wrapper">
         <header>
     <nav class="navbar">
@@ -99,7 +81,7 @@
         <div class="container">
             <div class="navbar-header">
                 <div>
-                    <a href="/">之行 &#39;s Blog</a><a id="mobile-toggle-theme">&nbsp;·&nbsp;Light</a>
+                    <a href="/">之行 &#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
                 </div>
                 <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
             </div>
@@ -142,10 +124,6 @@
             <h1 class="post-title">2017</h1>
             
                 <div class="post-meta">
-                    
-                        Author: <a itemprop="author" rel="author" href="/">之行</a>
-                    
-
                     
                         <span class="post-time">
                         Date: <a href="#">一月 4, 2017&nbsp;&nbsp;0:00:00</a>
