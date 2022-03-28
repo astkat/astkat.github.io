@@ -117,68 +117,6 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
 
     
     <article class="post-wrap">
@@ -214,39 +152,43 @@
 <p>Web documents </p>
 </blockquote>
 <p>Nginx配置 主目录在public下</p>
-<p>root &#x2F;www&#x2F;ss-panel&#x2F;public;<br>location &#x2F; {<br>try_files $uri $uri&#x2F; &#x2F;index.php$is_args$args;<br>}</p>
+<p><code>root /www/ss-panel/public;   location / &#123;   try\_files $uri $uri/ /index.php$is\_args$args;   &#125;</code></p>
 <p>开启目录下所需数据库(.env)</p>
-<p>curl -sS <a target="_blank" rel="noopener" href="https://getcomposer.org/installer">https://getcomposer.org/installer</a> php<br>php composer.phar install</p>
+<p><code>curl -sS [https://getcomposer.org/installer](https://getcomposer.org/installer) php   php composer.phar install</code></p>
 <p>字段配合后端</p>
 <p>根目录下执行</p>
-<p>php xcat createAdmin</p>
+<p><code>php xcat createAdmin</code></p>
 <p>创建管理员账户</p>
 <blockquote>
 <p>manyuser配置</p>
 </blockquote>
 <p>shadowsocks目录下 cp config_example.py为config.py进行配置</p>
-<h1 id="启用-MultiUser-API"><a href="#启用-MultiUser-API" class="headerlink" title="启用 MultiUser API"></a>启用 MultiUser API</h1><p>API_ENABLED &#x3D; True</p>
-<h1 id="就是在你的站点地址后面加个-x2F-mu"><a href="#就是在你的站点地址后面加个-x2F-mu" class="headerlink" title="就是在你的站点地址后面加个 &#x2F;mu"></a>就是在你的站点地址后面加个 &#x2F;mu</h1><p>API_URL &#x3D; ‘<a target="_blank" rel="noopener" href="http://ss.prinzeugen.net/mu">http://ss.prinzeugen.net/mu</a>‘</p>
-<h1 id="还记得上面在-env-中填写的-muKey-吗？把它填在这里"><a href="#还记得上面在-env-中填写的-muKey-吗？把它填在这里" class="headerlink" title="还记得上面在 .env 中填写的 muKey 吗？把它填在这里"></a>还记得上面在 .env 中填写的 muKey 吗？把它填在这里</h1><p>API_PASS &#x3D; ‘api_key_just_for_test’</p>
+<p>启用 MultiUser API</p>
+<p><code>API\_ENABLED = True</code></p>
+<p>就是在你的站点地址后面加个 &#x2F;mu</p>
+<p><code>API\_URL = &#39;[http://ss.prinzeugen.net/mu](http://ss.prinzeugen.net/mu)&#39;</code></p>
+<p>还记得上面在 .env 中填写的 muKey 吗？把它填在这里</p>
+<p><code>API\_PASS = &#39;api\_key\_just\_for\_test&#39;</code></p>
 <p>最后执行前端目录下python servers.py运行</p>
 <blockquote>
 <p>Others</p>
 </blockquote>
 <p>Ⅰ.端口开放</p>
 <p>端口检查 执行</p>
-<p>netstat -anp grep 你的端口</p>
+<p><code>netstat -anp grep 你的端口</code></p>
 <p> 端口开放及开放注册端口使用</p>
-<p> iptables -I INPUT -p tcp -m tcp –dport 你的端口 -j ACCEPT</p>
-<h1 id="允许你的端口及以上的端口-也可以指定-xxxxx-xxxxx-这样的范围"><a href="#允许你的端口及以上的端口-也可以指定-xxxxx-xxxxx-这样的范围" class="headerlink" title="允许你的端口及以上的端口  也可以指定 xxxxx:xxxxx 这样的范围"></a>允许你的端口及以上的端口  也可以指定 xxxxx:xxxxx 这样的范围</h1><p> iptables-save</p>
+<p> <code>iptables -I INPUT -p tcp -m tcp --dport 你的端口 -j ACCEPT</code></p>
+<p>允许你的端口及以上的端口  也可以指定 xxxxx:xxxxx 这样的范围</p>
+<p> <code>iptables-save</code></p>
 <p>Ⅱ.利用supervisord守护进程</p>
 <p>1.centos安装并运行</p>
-<p>yum install python-pip -y<br>pip install supervisor</p>
+<p><code>yum install python-pip -y   pip install supervisor</code></p>
 <p>2.输出配置并运行</p>
-<p>echo_supervisord_conf &gt; &#x2F;etc&#x2F;supervisord.conf<br>supervisord</p>
+<p><code>echo\_supervisord\_conf &gt; /etc/supervisord.conf   supervisord</code></p>
 <p>3.配置文件 &#x2F;etc&#x2F;supervisord.conf</p>
-<p>[program:ss-manyuser]<br>command &#x3D; python &#x2F;root&#x2F;shadowsocks-py-mu&#x2F;shadowsocks&#x2F;servers.py<br>user &#x3D; root<br>autostart &#x3D; true<br>autorestart &#x3D; true</p>
+<p><code>\[program:ss-manyuser\]   command = python /root/shadowsocks-py-mu/shadowsocks/servers.py   user = root   autostart = true   autorestart = true</code></p>
 <p>4.重启并查看运行</p>
-<p>killall -HUP supervisord<br>ps -ef grep servers.py</p>
+<p><code>killall -HUP supervisord   ps -ef grep servers.py</code></p>
 
         </div>
 
