@@ -934,6 +934,7 @@ header label {
 }
 .post-copyright {
   margin-top: 5rem;
+  word-break: break-all;
   border-top: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
 }
